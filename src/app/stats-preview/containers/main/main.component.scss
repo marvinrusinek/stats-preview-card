@@ -7,24 +7,33 @@ main {
 
   .container {
     width: 1000px;
-    height: 600px;
-    display: flex;
-    flex-direction: row;
+    height: 550px;
     margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+      "content image";
 
     .content {
+      grid-area: content;
       background-color: #1c1938;
-      width: 50%;
       margin-top: 15%;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
 
       .content-text {
-        margin-left: 20px;
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 15%;
 
         h1 {
           color: white;
           font-weight: bold;
+          width: 400px;
+
+          span {
+            color: #ac5ade;
+          }
         }
 
         p {
@@ -60,7 +69,9 @@ main {
         }
       }
     }
+
     .image {
+      grid-area: image;
       width: 50%;
       margin-top: 15%;
       border-top-right-radius: 10px;
@@ -68,7 +79,8 @@ main {
 
       img {
         width: 400px;
-        height: 450px;
+        height: 480px;
+        margin-top: 10px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
       }
@@ -76,9 +88,12 @@ main {
   }
 
   .attribution {
+    grid-area: footer;
     font-size: 11px;
-    text-align: center;
     color: white;
+    position: fixed;
+    bottom: 0;
+    left: 37.5%;
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -89,5 +104,59 @@ main {
         color: turquoise;
       }
     }
+  }
+}
+
+@media all and (max-width: 650px) {
+  main {
+    width: 100%;
+
+    .container {
+      //display: flex;
+      //flex-direction: column;
+      display: grid;
+      grid-template-areas:
+        "image"
+        "content"
+        "footer";
+      height: fit-content;
+
+      .content, .image {
+        width: 400px;
+        margin-left: 30px;
+      }
+
+      .content {
+        .content-text {
+          h1 {
+            width: 300px;
+          }
+          p {
+            width: 260px;
+            text-align: center;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+
+      .image {
+        img {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          height: 350px;
+        }
+      }
+    }
+  }
+
+  .attribution {
+    position: fixed;
+    bottom: 15px; // not working
+    margin-left: -25% !important;
   }
 }
