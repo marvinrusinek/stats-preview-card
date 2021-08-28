@@ -1,0 +1,93 @@
+main {
+  background-color: #0a0c1b;
+  height: 100vh;
+  width: 100%;
+  margin: -10px;
+  font-family: 'Fairway Ext', sans-serif;
+
+  .container {
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+
+    .content {
+      background-color: #1c1938;
+      width: 50%;
+      margin-top: 15%;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+
+      .content-text {
+        margin-left: 20px;
+
+        h1 {
+          color: white;
+          font-weight: bold;
+        }
+
+        p {
+          width: 320px;
+          color: white;
+          line-height: 1.4;
+        }
+
+        ul {
+          list-style-type: none;
+          display: flex;
+          flex-direction: row;
+          margin-left: -40px;
+
+          li {
+            padding-right: 30px;
+
+            .card {
+              display: flex;
+              flex-direction: column;
+
+              .number {
+                color: white;
+              }
+
+              .metadata {
+                text-transform: uppercase;
+                margin-top: -10px;
+                color: gray;
+              }
+            }
+          }
+        }
+      }
+    }
+    .image {
+      width: 50%;
+      margin-top: 15%;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      img {
+        width: 400px;
+        height: 450px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    a {
+      color: hsl(228, 45%, 44%);
+
+      &:hover {
+        color: turquoise;
+      }
+    }
+  }
+}
